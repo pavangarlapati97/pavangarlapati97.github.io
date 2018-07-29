@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My VR scene</title>
+    <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+</head>
+<body>
+    <a-assets>
+            <img id="texture" src="picture.jpg">
+       	    <video id="text" autoplay="" loop="true" src="Nature.mp4" webkit-playsinline></video>
+    </a-assets>
+ 
+    <a-scene>
+            <a-box width="1" height="" depth="1" 
+                   position="0 2.5 -4" src="#texture"> 
+		
+            </a-box>
+            <a-cylinder color="green" height="2" radius="1" depth="1"
+            position="-4 1.5 -6">
+            <a-animation attribute="material.color" begin="click" from="yellow" to="red" dur="3000"></a-animation>
+            </a-cylinder>
+            <a-sphere color="red" radius="1" position="4 1.5 -6"><a-videosphere src="#text"></a-videosphere></a-sphere>
+    </a-scene>    
+</body>
+</html>
