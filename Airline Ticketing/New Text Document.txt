@@ -1,0 +1,32 @@
+<%@ page import="java.sql.*"%>
+<%!
+	
+	Connection con;
+	Statement st;
+	ResultSet rs;
+
+%>
+<%	
+	
+Class.forName("oracle.jdbc.driver.OracleDriver");
+	con=DriverManager.getConnection("jdbc:oracle:thin:@system1:1521:oracle","airlines","airlines");
+	st=con.createStatement();
+		
+
+
+		rs=st.executeQuery("select * from  aeroplane_details");
+		
+			out.println("<table bgcolor='' border='2' style='border-collapse: collapse; border: 3px double #FF00FF' bordercolor='#111111' width='50%' id='AutoNumber1' align='center'>");
+	out.println("<tr align ='center'><th>PLANE_ID</th><th>PNAME</th><th>SEATING</th><th></th><th>AIRPORT NAME</th></tr>");
+
+	while(rs.next())
+	{
+	out.println("<tr align='center'><td>"+rs.getString(4)+"</td><td>"+rs.getString(1)+"</td><td>"+rs.getString(2)+"</td><td>"+rs.getString(3)+"</td><td>"+rs.getString(5)+"</td></tr>");
+	System.out.println("in the loop");
+
+	}
+	out.println("</table>");		
+
+
+	
+%>

@@ -1,0 +1,47 @@
+<html>
+
+<head>
+<title>New Page 1</title>
+<script language="javascript">
+function validateusername()
+{
+var uname=loginform.username.value;
+if(uname=="")
+{
+window.prompt("enter your name");
+alert("user name should not be empty");
+loginform.username.focus();
+}
+
+
+
+
+return true;
+}
+function validatepassword()
+{
+var pword = loginform.password.value;
+
+if(pword.length<6)
+alert("password should be empty and should be more than six characters");
+loginform.password.focus();
+
+return true;
+}
+</script>
+
+</head>
+
+<body>
+<form method="" name="loginform">
+<p>
+
+  username&nbsp; <input type="text" name="username" size="20" onblur="return validateusername()"></p>
+  <p>password <input type="text" name="password" size="20" onfocus="return validateusername()"></p>
+  <p><input type="submit" value="Submit" name="B1" onfocus="return validatepassword()" onclick="return validatepassword()">
+  <input type="reset" value="Reset" name="B2"></p>
+</form>
+
+</body>
+
+</html>

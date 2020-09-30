@@ -1,0 +1,63 @@
+<html>
+
+<head>
+<title>New Page 1</title>
+</head>
+<script language="javascript">
+function  checkstatus()
+{
+var f=0;
+var values=document.myform.cname.value;
+for(var i=0;i<values.length;i++)
+if(values.charCodeAt(i)>=97 && values.charCodeAt(i)<=122)
+f=0;
+else
+{
+f=1;
+break;
+}
+if(f==0)
+alert("valid input for your name");
+else
+{
+alert("invalid input for your name");
+document.myform.cname.focus();
+}
+return;
+}
+function checkstatus1()
+{
+	var f=0;
+	var phone = document.myform.phone.value;
+	for(var i=0;i<phone.length;i++)
+	if(phone.charCodeAt(i)>=48 && phone.charCodeAt(i)<=57)
+	f=0;
+	else
+	{
+	f=1;break;
+	}
+	if(f==0)
+	alert("valid input for phone no");
+	else
+	{
+		alert("invalid input for Phone No");
+		document.myform.phone.focus();
+	}	
+
+}
+
+</script>
+<body>
+
+<form method="POST" action="" name="myform">
+<p>
+  Your Name :&nbsp;&nbsp;&nbsp;&nbsp; 
+  <input type="text" name="cname" size="20" onblur="return checkstatus()"></p>
+  <p>Phone no: <input type="text" name="phone" size="20" onblur="return checkstatus1()" ></p>
+  <p>&nbsp;</p>
+  <p><input type="submit" value="Submit" name="B1"><input type="reset" value="Reset" name="B2"></p>
+</form>
+
+</body>
+
+</html>
